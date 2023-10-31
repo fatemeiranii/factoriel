@@ -1,0 +1,36 @@
+<html>
+<head>
+<script type="text/javascript">
+function factorial(aNumber) {
+aNumber = Math.floor(aNumber);
+if(!isFinite(aNumber) || aNumber < 0)
+return false;
+if(aNumber == 0)
+return 1;
+var output = 1;
+for (i = 1; i <= aNumber; i++) {
+output *= i;
+}
+return output;
+}
+function CountResult() {
+var inputNumber = document.getElementById("number").value;
+var result = factorial(inputNumber);
+if(!result) {
+alert("مقدار وارد شده معتبر نیست");
+}
+else {
+document.getElementById("result").value = result;
+}
+}
+</script>
+</head>
+<body dir="rtl">
+<p>
+عدد مورد نظر را وارد کنید:
+<input type="text" name="number" id="number" size="10">
+<input type="button" value="محاسبه" onclick="CountResult()">
+<input type="text" name="result" id="result" size="10">
+</p>
+</body>
+</html>
